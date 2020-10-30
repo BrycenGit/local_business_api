@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # get 'businesses/update'
   # get 'businesses/destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-resources :businesses
+resources :businesses do
+  get 'random', on: :collection
+end
 end

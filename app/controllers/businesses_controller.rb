@@ -1,6 +1,10 @@
 class BusinessesController < ApplicationController
   def index
-    @businesses = Business.all
+    if params[:name_search]
+      @businesses = Business.search_by_name(params[:name_search])
+    else
+      @businesses = Business.all
+    end
     json_response(@businesses)
   end
 
@@ -25,6 +29,12 @@ class BusinessesController < ApplicationController
     @business = Business.find(params[:id])
     @business.destroy
   end
+
+  def random
+    @business = Business.all.sample
+    json_response(@business)
+  end
+
 
   private
   def business_params
