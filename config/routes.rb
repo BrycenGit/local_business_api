@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'businesses/index'
   get 'businesses/show'
   get 'businesses/create'
