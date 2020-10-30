@@ -1,4 +1,7 @@
 class BusinessesController < ApplicationController
+  before_action :restrict_access
+
+
   def index
     if params[:name_search]
       @businesses = Business.search_by_name(params[:name_search])
