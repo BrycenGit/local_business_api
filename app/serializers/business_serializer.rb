@@ -1,3 +1,3 @@
 class BusinessSerializer < ApplicationSerializer
-  attributes :id
+  attributes :id, :name, :address, :phone, :zipcode
 end
