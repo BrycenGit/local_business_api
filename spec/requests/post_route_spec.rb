@@ -10,5 +10,7 @@ describe "post a business route", :type => :request do
     expect(JSON.parse(response.body)['name']).to eq('yummy')
   end
 
-  
+  it 'should return status code 200' do
+    expect(response).to have_http_status(:success)
+  end
 end
