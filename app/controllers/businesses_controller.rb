@@ -40,4 +40,5 @@ class BusinessesController < ApplicationController
   def business_params
     params.permit(:name, :zipcode, :address, :phone)
   end
+  
 end
