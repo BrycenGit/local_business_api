@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe "post a business route", :type => :request do
-
+  let!(:api_key) { ApiKey.create.access_token }
   before do
-    post '/businesses', params: {name: 'yummy', address: 'awesome lane', phone: 'no-number', zipcode: '96761' }
+    post '/businesses', params: {name: 'yummy', address: 'awesome lane', phone: 'no-number', zipcode: '96761', api_key: api_key}
   end
 
   it "returns the the business name" do

@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 describe "post a business route", :type => :request do
-let!(:business) { FactoryBot.create(:business) }
+  let!(:api_key) { ApiKey.create.access_token }
+  let!(:business) { FactoryBot.create(:business) }
 
   before do
-    put "/businesses/#{business.id}", params: {name: 'yummy'}
-    get "/businesses/#{business.id}"
+    put "/businesses/#{business.id}", params: {name: 'yummy', api_key: api_key}
+    get "/businesses/#{business.id}", params: {api_key: api_key}
   end
 
   it "returns empty changed name of business" do

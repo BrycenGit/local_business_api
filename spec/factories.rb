@@ -5,4 +5,5 @@ FactoryBot.define do
     phone {Faker::PhoneNumber.phone_number}
     zipcode { '97006' }
   end
+
 end

@@ -1,7 +1,7 @@
 class ApiKey < ApplicationRecord
   
   before_create :generate_access_token
-after_create :return_token
+
   private
 
   def generate_access_token
