@@ -32,10 +32,14 @@ This project connects to a postgreSQL database. It stores information for busine
 - append <code>?api_key={YOUR_API_KEY_YOU_SAVED}</code> without the brackets to the end or each api call. If there are other parameters in your api call already, seperate them with an <code>&</code> i.e. <code>&?api_key=</code>
 - <code>GET /businesses</code> will return all businesses in the API 
 - <code>GET /businesses/random</code> will return a random business from the API 
-- <code>GET /businesses?name_search={NAME_SEARCH_QUERY}</code> will return a list of businesses that are are similar to your search queary. Remove the square brackets.
+- <code>GET /businesses?name_search={NAME_SEARCH_QUERY}</code> will return a list of businesses that are are similar to your search queary. Remove the brackets.
 - <code>POST /businesses?name={NAME}&?address={ADDRESS}&?zipcode={ZIPCODE}&?phone={PHONE}</code> will add a business to the api. dont forget to append the api key like the examples before.
 - <code>GET /businesses/{BUSINESS_ID}</code> will show business information for business with matching id.
 - <code>PUT /businesses/{BUSINESS_ID}?name={NAME_TO_CHANGE}</code> will change the business with the matching id's name.
+- These are the ther endpoints a user can change:
+    - <code>?address={ADDRESS_TO_CHANGE}</code>
+    - <code>?phone={PHONE_TO_CHANGE}</code>
+    - <code>?zipcode={ZIPCODE_TO_CHANGE}</code>
 - <code>DELETE /businesses/{BUSINESS_ID}</code> will delete business with the mathcing id.
 
 ## Known Bugs
